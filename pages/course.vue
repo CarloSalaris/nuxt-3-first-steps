@@ -1,7 +1,7 @@
 <template>
     <div class="text-center mb-2">
         <h1 class="my-5">Course: <strong>Mastering Nuxt 3</strong></h1>
-        <NuxtLink class="btn btn-primary" to="http://localhost:3000">
+        <NuxtLink class="btn btn-primary" to="/">
             Torna alla home
         </NuxtLink>
     </div>
