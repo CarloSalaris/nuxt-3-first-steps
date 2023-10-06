@@ -35,6 +35,8 @@
 const { chapters } = useCourse();
 /* definePageMeta({
     layout: false,
+    or
+    layout: nomeLayout,
 }); */
 </script>
 
