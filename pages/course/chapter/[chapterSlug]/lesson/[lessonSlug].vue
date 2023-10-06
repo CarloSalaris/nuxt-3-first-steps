@@ -1,21 +1,19 @@
 <template>
-    
     <div class="text-center">
         <h3 class="fw-bold">{{ chapter.title }} - Lesson {{ lesson.number }}</h3>
         <h2 class="fw-bold my-4">{{ lesson.title }}</h2>
     </div>
-    
-    <VideoPlayer
-        v-if="lesson.videoId"
-        :video-id="lesson.videoId"
-    />
-    
+
+    <VideoPlayer v-if="lesson.videoId" :video-id="lesson.videoId" />
+
     <p class="my-3">{{ lesson.text }}</p>
 
-    <LessonCompleteButton
-        :model-value="isLessonComplete"
-        @update:model-value="toggleComplete"/>
-
+    <div class="d-flex justify-content-around">
+        <LessonCompleteButton :model-value="isLessonComplete" @update:model-value="toggleComplete" />
+        <button class="btn btn-danger" @click="sendToError()">
+            Error button
+        </button>
+    </div>
 </template>
 
 <script setup>
@@ -38,7 +36,7 @@ const title = computed(() => {
     return `${lesson.value.title} - ${course.title}`;
 })
 useHead({
-  title,
+    title,
 });
 
 const progress = useLocalStorage('progress', []);
@@ -60,5 +58,9 @@ const toggleComplete = () => {
         progress.value[chapter.value.number - 1] = [];
     }
     progress.value[chapter.value.number - 1][lesson.value.number - 1] = !isLessonComplete.value;
+}
+
+const sendToError = () => {
+    throw createError('Scemo chi legge!')
 }
 </script>

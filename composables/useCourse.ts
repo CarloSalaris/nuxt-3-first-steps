@@ -8,6 +8,7 @@ type Lesson = {
   videoId: number;
   text: string;
   sourceUrl?: string; //optional field
+  path: string;
 };
 
 type Chapter = {
