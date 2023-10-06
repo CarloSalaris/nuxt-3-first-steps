@@ -1,3 +1,9 @@
 <template>
-    <h1>Hello, World!</h1>
+    <div class="text-center">
+        <h1>Hello, World!</h1>
+        <NuxtLink class="btn btn-primary"
+            to="http://localhost:3000/course/chapter/1-chapter-1/lesson/1-introduction-to-typescript-with-vue-js-3">
+            VAI ALLE LEZIONI!
+        </NuxtLink>
+    </div>
 </template>
