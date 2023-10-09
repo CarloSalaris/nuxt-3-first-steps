@@ -1,13 +1,6 @@
 <template>
-  <iframe
-  width="100%"
-  height="400"
-  :src="`https://player.vimeo.com/video/${props.videoId}`"
-  title="Video player"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipbord-write; encrypted-media;"
-  allowfullscreen
-  ></iframe>
+  <iframe width="100%" height="400" :src="`https://player.vimeo.com/video/${props.videoId}`" title="Video player"
+    frameborder="0" allowfullscreen></iframe>
 </template>
 
 <script setup>
