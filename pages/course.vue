@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="text-center mb-2">
-            <div class="d-flex" :class="UserCard ? 'justify-content-between' : 'justify-content-center'">
+            <div class="d-flex justify-content-around">
                 <h1 class="text-center mb-5"><strong>{{ title }}</strong></h1>
                 <UserCard />
             </div>
