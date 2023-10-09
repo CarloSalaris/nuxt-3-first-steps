@@ -1,8 +1,8 @@
 <template>
     <div>
         <div class="text-center mb-2">
-            <div class="d-flex justify-content-between">
-                <h1 class="mb-5"><strong>{{ title }}</strong></h1>
+            <div class="d-flex" :class="UserCard ? 'justify-content-between' : 'justify-content-center'">
+                <h1 class="text-center mb-5"><strong>{{ title }}</strong></h1>
                 <UserCard />
             </div>
             <NuxtLink class="btn btn-primary" to="/">
