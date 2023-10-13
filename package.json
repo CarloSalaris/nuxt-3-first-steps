@@ -1,6 +1,9 @@
 {
   "name": "nuxt-app",
   "private": true,
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  },
   "type": "module",
   "scripts": {
     "build": "nuxt build",
@@ -15,11 +18,13 @@
     "@vueuse/core": "^10.5.0",
     "@vueuse/nuxt": "^10.5.0",
     "nuxt": "^3.7.4",
+    "prisma": "^5.4.2",
     "sass": "^1.69.3",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@prisma/client": "^5.4.2",
     "bootstrap": "^5.3.2"
   }
 }
