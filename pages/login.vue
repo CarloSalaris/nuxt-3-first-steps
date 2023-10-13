@@ -1,6 +1,6 @@
 <template>
     <div class="bg-light h-100 border rounded-4 px-1 py-5 text-center">
-        <h1>Log in to {{ title }}</h1>
+        <h1>Log in to {{ course.title }}</h1>
         <NuxtLink class="btn btn-primary my-3" :to="firstLesson.path">
             Go to the lessons page
         </NuxtLink>
@@ -12,9 +12,9 @@
 </template>
 
 <script setup lang="ts">
-const { title } = useCourse();
+const course = await useCourse();
 const { query } = useRoute();
-const firstLesson = useFirstLesson();
+const firstLesson = await useFirstLesson();
 const supabase = useSupabaseClient();
 const user = useSupabaseUser();
 

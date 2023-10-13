@@ -2,7 +2,7 @@
     <div>
         <div class="text-center mb-2">
             <div class="d-flex justify-content-around">
-                <h1 class="text-center mb-5"><strong>{{ title }}</strong></h1>
+                <h1 class="text-center mb-5"><strong>{{ course.title }}</strong></h1>
                 <UserCard />
             </div>
             <NuxtLink class="btn btn-primary" to="/">
@@ -13,7 +13,7 @@
             <div class="col-12 col-md-4 col-xl-3 p-2">
                 <div class="bg-light h-100 border rounded-4 px-1 py-5">
                     <h3 class="text-center fw-bold">Chapters</h3>
-                    <div class="p-2 my-4" v-for="chapter in chapters" :key="chapter.slug">
+                    <div class="p-2 my-4" v-for="chapter in course.chapters" :key="chapter.slug">
                         <h4>{{ chapter.title }}</h4>
                         <NuxtLink class="d-flex text-decoration-none mb-1 px-2 py-1"
                             v-for="(lesson, index) in chapter.lessons" :key="lesson.slug" :to="lesson.path"
@@ -49,9 +49,11 @@
 </template>
 
 <script setup>
-const { chapters, title } = useCourse();
+const course = await useCourse();
+const firstLesson = await useFirstLesson();
 
 const resetError = async (error) => {
+    await navigateTo(firstLesson.path);
     error.value = null;
 };
 /* definePageMeta({

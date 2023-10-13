@@ -1,4 +1,8 @@
-import { Lesson, LessonWithPath, Chapter, Course } from "~/types/course";
+import { CourseMeta } from "~~/types/course";
+
+export default async () => useFetchWithCache<CourseMeta>("/api/course/meta");
+
+/* import { Lesson, LessonWithPath, Chapter, Course } from "~/types/course";
 import courseData from "./courseData";
 
 export const useCourse = (): Course => {
@@ -16,4 +20,4 @@ export const useCourse = (): Course => {
     ...courseData,
     chapters,
   };
-};
+}; */
