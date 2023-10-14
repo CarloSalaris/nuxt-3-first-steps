@@ -1,13 +1,4 @@
-export type Lesson = {
-  title: string;
-  slug: string;
-  number: number;
-  downloadUrl: string;
-  videoId: number;
-  text: string;
-  sourceUrl?: string; //optional field
-  path: string;
-};
+import { Lesson } from "@prisma/client";
 
 export type LessonWithPath = Lesson & {
   path: string;
